@@ -6,7 +6,6 @@ const backspace = document.getElementById("backspace");
 
 let currentInput = "";
 
-// Ripple effect function
 function createRipple(event) {
   const button = event.currentTarget;
 
@@ -59,7 +58,6 @@ buttons.forEach(button => {
       return;
     }
 
-    // Append input
     currentInput += value;
     display.value = currentInput;
   });
