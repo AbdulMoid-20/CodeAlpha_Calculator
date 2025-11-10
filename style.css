@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+/* Background Image */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("./assets/pexels-cottonbro-5185093.jpg") 
+    no-repeat center center/cover;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Glassy Calculator Container */
+.calculator {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.6);
+  width: 320px;
+}
+
+/* Display */
+#display {
+  width: 100%;
+  height: 60px;
+  background: rgba(0, 128, 128, 0.671);
+  color: #fff;
+  box-shadow: 0 5px 0 rgba(0, 128, 128, 0.187);
+  border: none;
+  border-radius: 8px;
+  font-size: 2rem;
+  text-align: right;
+  padding-right: 10px;
+  margin-bottom: 15px;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+
+/* Button grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+/* Base button */
+.btn {
+  height: 60px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(0, 128, 128, 0.671);
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0, 128, 128, 0.374);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.15s ease;
+}
+
+/* Hover and active effects */
+.btn:hover {
+  background: rgb(0, 128, 128);
+}
+
+.btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+  filter: brightness(1.2);
+}
+
+/* Operators */
+.operator {
+  background: rgba(0, 188, 212, 0.8);
+  box-shadow: 0 4px 0 rgba(0, 140, 158, 0.7);
+}
+
+.operator:hover {
+  background: rgba(0, 163, 183, 0.9);
+}
+
+/* Backspace Button */
+#backspace {
+  background: rgba(255, 87, 34, 0.8);
+  box-shadow: 0 4px 0 rgba(179, 61, 0, 0.6);
+}
+
+#backspace:hover {
+  background: rgba(230, 74, 25, 0.9);
+}
+
+/* Clear Button */
+#clear {
+  background: rgba(244, 67, 54, 0.8);
+  box-shadow: 0 4px 0 rgba(179, 28, 24, 0.6);
+}
+
+#clear:hover {
+  background: rgba(211, 47, 47, 0.9);
+}
+
+/* Equal Button */
+.equal {
+  grid-column: span 3;
+  background: rgba(255, 235, 59, 0.9);
+  color: #222;
+  font-weight: bold;
+  box-shadow: 0 4px 0 rgba(179, 161, 0, 0.6);
+}
+
+.equal:hover {
+  background: rgba(253, 216, 53, 0.95);
+}
+
+/* Press Effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: effect 0.6s linear;
+  background-color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+@keyframes effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
